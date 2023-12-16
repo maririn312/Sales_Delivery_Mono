@@ -11,7 +11,7 @@ export class RegisterDto {
   @Field()
   @IsNotEmpty({ message: 'Password is required.' })
   @MinLength(8, { message: 'Password must be at least 8 characters.' })
-  Password: string;
+  password: string;
 
   @Field()
   @IsNotEmpty({ message: 'Email is required.' })
@@ -28,5 +28,5 @@ export class LoginDto {
 
   @Field()
   @IsNotEmpty({ message: 'Password is required.' })
-  Password: string;
+  password: string;
 }
