@@ -5,6 +5,7 @@ import { ObjectType, Field, Directive } from '@nestjs/graphql';
 export class Avatars {
   @Field()
   id: string;
+
   @Field()
   public_id: string;
 
@@ -27,7 +28,7 @@ export class User {
   email: string;
 
   @Field()
-  passsword: string;
+  password: string;
 
   @Field(() => Avatars, { nullable: true })
   avatar?: Avatars | null;
@@ -35,9 +36,15 @@ export class User {
   @Field()
   role: string;
 
-  @Field()
-  createAt: Date;
+  @Field({ nullable: true })
+  address: string;
 
-  @Field
-  updateAt: Date;
+  @Field({ nullable: true })
+  phone_number: number;
+
+  @Field()
+  createdAt: Date;
+
+  @Field()
+  updatedAt: Date;
 }
