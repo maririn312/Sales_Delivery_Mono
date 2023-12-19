@@ -41,7 +41,7 @@ export class UsersService {
       },
     });
     if (isEmailExist) {
-      throw new BadRequestException('User already exist with this email!');
+      throw new BadRequestException('Энэ имэйлтэй хэрэглэгч аль хэдийн байна!');
     }
 
     const phoneNumbersToCheck = [phone_number];
@@ -114,7 +114,7 @@ export class UsersService {
       } as JwtVerifyOptions) as { user: UserData; activationCode: string };
 
     if (newUser.activationCode !== activationCode) {
-      throw new BadRequestException('Invalid activation code');
+      throw new BadRequestException('Идэвхжүүлэх код буруу байна');
     }
 
     const { name, email, password, phone_number } = newUser.user;
