@@ -5,22 +5,22 @@ const navItems = [
     title: "Home",
     url: "/",
   },
-  {
-    title: "About us",
-    url: "/about",
-  },
-  {
-    title: "Restaurants",
-    url: "/restaurants",
-  },
-  {
-    title: "Popular Foods",
-    url: "/foods",
-  },
-  {
-    title: "Contact us",
-    url: "/contact",
-  },
+  // {
+  //   title: "About us",
+  //   url: "/about",
+  // },
+  // {
+  //   title: "Stores",
+  //   url: "/restaurants",
+  // },
+  // {
+  //   title: "Popular Foods",
+  //   url: "/foods",
+  // },
+  // {
+  //   title: "Contact us",
+  //   url: "/contact",
+  // },
 ];
 
 const NavItems = ({ activeItem = 0 }: { activeItem?: number }) => {
