@@ -13,15 +13,16 @@ enum Role {
 }
 
 model Avatars {
-  id        String   @id @default(auto()) @db.Uuid
+  id        String   @id @db.Uuid
   public_id String
   url       String
   user      User     @relation(fields: [userId], references: [id])
   userId    String   @unique @db.Uuid
 }
 
+
 model User {
-  id           String   @id @default(auto()) @db.Uuid
+  id           String   @id @db.Uuid
   name         String
   email        String   @unique
   phone_number Float?
@@ -33,3 +34,4 @@ model User {
   updatedAt    DateTime @updatedAt
   @@unique([email, phone_number], name: "unique_email_phone_number")
 }
+

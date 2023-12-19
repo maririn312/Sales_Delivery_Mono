@@ -131,12 +131,14 @@ export class UsersService {
 
     const user = await this.prisma.user.create({
       data: {
+        id: undefined,
         name,
         email,
         password,
         phone_number,
       },
     });
+    
 
     return { user, response };
   }
