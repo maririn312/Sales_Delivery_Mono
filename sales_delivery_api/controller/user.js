@@ -40,12 +40,12 @@ router.post("/create-user", async (req, res, next) => {
     try {
       await sendMail({
         email: user.email,
-        subject: "Activate your account",
-        message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
+        subject: "Бүртгэлээ идэвхжүүлнэ үү",
+        message: `Сайн байна уу ${user.name}, та бүртгэлээ идвэхжүүлэнэ үү: ${activationUrl}`,
       });
       res.status(201).json({
         success: true,
-        message: `please check your email:- ${user.email} to activate your account!`,
+        message: `Та цахим хаяг аа  идвэхжүүлэн үү:- ${user.email}!`,
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -84,7 +84,7 @@ router.post(
       let user = await User.findOne({ email });
 
       if (user) {
-        return next(new ErrorHandler("User already exists", 400));
+        return next(new ErrorHandler("Бүртгэл үүссэн байна", 400));
       }
       user = await User.create({
         name,
@@ -108,13 +108,13 @@ router.post(
       const { email, password } = req.body;
 
       if (!email || !password) {
-        return next(new ErrorHandler("Please provide the all fields!", 400));
+        return next(new ErrorHandler("Бүх талбарыг оруулна уу!", 400));
       }
 
       const user = await User.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists!", 400));
+        return next(new ErrorHandler("Хэрэглэгч үүсээгүй байна!", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
@@ -141,7 +141,7 @@ router.get(
       const user = await User.findById(req.user.id);
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists", 400));
+        return next(new ErrorHandler("Хэрэглэгч үүсээгүй байна!", 400));
       }
 
       res.status(200).json({
