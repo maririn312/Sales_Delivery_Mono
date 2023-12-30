@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import Loader from "../components/Layout/Loader";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
@@ -44,8 +43,7 @@ const ProductsPage = () => {
             No products Found!
           </h1>
         ) : null}
-      </div>
-      <Footer />
+      </div> 
     </div>
     )
   }
