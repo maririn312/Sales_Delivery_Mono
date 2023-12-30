@@ -8,7 +8,7 @@ const TrackOrderPage = () => {
     <div>
         <Header />
         <TrackOrder />
-        <Footer />
+        {/* <Footer /> */}
     </div>
   )
 }

@@ -45,7 +45,7 @@ const ProductsPage = () => {
           </h1>
         ) : null}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
     )
   }
