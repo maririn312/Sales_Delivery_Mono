@@ -52,7 +52,7 @@ const CreateEvent = () => {
       toast.error(error);
     }
     if (success) {
-      toast.success("Event created successfully!");
+      toast.success("Арга хэмжээг амжилттай үүсгэсэн!");
       navigate("/dashboard-events");
       window.location.reload();
     }
@@ -107,7 +107,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-            Name <span className="text-red-500">*</span>
+            Нэр <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -115,13 +115,13 @@ const CreateEvent = () => {
             value={name}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your event product name..."
+            placeholder="Үйл явдлын бүтээгдэхүүнийхээ нэрийг оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Description <span className="text-red-500">*</span>
+          Тодорхойлолт <span className="text-red-500">*</span>
           </label>
           <textarea
             cols="30"
@@ -132,20 +132,20 @@ const CreateEvent = () => {
             value={description}
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Enter your event product description..."
+            placeholder="Үйл явдлын бүтээгдэхүүнийхээ тайлбарыг оруулна уу..."
           ></textarea>
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Category <span className="text-red-500">*</span>
+          Ангилал <span className="text-red-500">*</span>
           </label>
           <select
             className="w-full mt-2 border h-[35px] rounded-[5px]"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="Choose a category">Choose a category</option>
+            <option value="Choose a category">ангилал сонгох</option>
             {categoriesData &&
               categoriesData.map((i) => (
                 <option value={i.title} key={i.title}>
@@ -156,32 +156,32 @@ const CreateEvent = () => {
         </div>
         <br />
         <div>
-          <label className="pb-2">Tags</label>
+          <label className="pb-2">Шошго</label>
           <input
             type="text"
             name="tags"
             value={tags}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setTags(e.target.value)}
-            placeholder="Enter your event product tags..."
+            placeholder="Үйл явдлын бүтээгдэхүүний шошгоо оруулна уу..."
           />
         </div>
         <br />
         <div>
-          <label className="pb-2">Original Price</label>
+          <label className="pb-2">Жинхэнэ үнэ</label>
           <input
             type="number"
             name="price"
             value={originalPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setOriginalPrice(e.target.value)}
-            placeholder="Enter your event product price..."
+            placeholder="Үйл явдлын бүтээгдэхүүний үнийг оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Price (With Discount) <span className="text-red-500">*</span>
+          Үнэ (хямдралтай) <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -189,13 +189,13 @@ const CreateEvent = () => {
             value={discountPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDiscountPrice(e.target.value)}
-            placeholder="Enter your event product price with discount..."
+            placeholder="Хямдралтай үйл явдлын бүтээгдэхүүний үнийг оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Product Stock <span className="text-red-500">*</span>
+          Бүтээгдэхүүний нөөц <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -203,13 +203,13 @@ const CreateEvent = () => {
             value={stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            placeholder="Enter your event product stock..."
+            placeholder="Үйл явдлын бүтээгдэхүүний нөөцөө оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Event Start Date <span className="text-red-500">*</span>
+          Үйл явдал эхлэх огноо <span className="text-red-500">*</span>
           </label>
           <input
             type="date"
@@ -219,13 +219,13 @@ const CreateEvent = () => {
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={handleStartDateChange}
             min={today}
-            placeholder="Enter your event product stock..."
+            placeholder="Үйл явдлын бүтээгдэхүүний нөөцөө оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Event End Date <span className="text-red-500">*</span>
+          Үйл явдал дуусах огноо <span className="text-red-500">*</span>
           </label>
           <input
             type="date"
@@ -235,13 +235,13 @@ const CreateEvent = () => {
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={handleEndDateChange}
             min={minEndDate}
-            placeholder="Enter your event product stock..."
+            placeholder="Үйл явдлын бүтээгдэхүүний нөөцөө оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Upload Images <span className="text-red-500">*</span>
+          Зураг байршуулах <span className="text-red-500">*</span>
           </label>
           <input
             type="file"

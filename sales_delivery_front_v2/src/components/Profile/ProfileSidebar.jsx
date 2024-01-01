@@ -42,7 +42,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 1 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Profile
+          Профайл
         </span>
       </div>
       <div
@@ -55,7 +55,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 2 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Orders
+          Захиалга
         </span>
       </div>
       <div
@@ -68,7 +68,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 3 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Refunds
+          Буцаан олголт
         </span>
       </div>
 
@@ -82,7 +82,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 4 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Inbox
+          Ирсэн имэйл
         </span>
       </div>
 
@@ -96,7 +96,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 5 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Track Order
+          Захиалга хянах
         </span>
       </div>
 
@@ -110,8 +110,8 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 6 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Change Password
-        </span>
+            Нууц үг солих
+          </span>
       </div>
 
       <div
@@ -124,7 +124,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 7 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Address
+          Хаяг
         </span>
       </div>
 
@@ -143,7 +143,7 @@ const ProfileSidebar = ({ setActive, active }) => {
                 active === 8 ? "text-[red]" : ""
               } 800px:block hidden`}
             >
-              Admin Dashboard
+              Админ хяналтын самбар
             </span>
           </div>
         </Link>

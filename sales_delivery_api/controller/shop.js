@@ -16,7 +16,7 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
     const { email } = req.body;
     const sellerEmail = await Shop.findOne({ email });
     if (sellerEmail) {
-      return next(new ErrorHandler("User already exists", 400));
+      return next(new ErrorHandler("Хэрэглэгч бүртгэгдсэн байна", 400));
     }
 
     const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
@@ -39,17 +39,17 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
 
     const activationToken = createActivationToken(seller);
 
-    const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
+    const activationUrl = `http://192.168.1.2:3000/seller/activation/${activationToken}`;
 
     try {
       await sendMail({
         email: seller.email,
-        subject: "Activate your Shop",
-        message: `Hello ${seller.name}, please click on the link to activate your shop: ${activationUrl}`,
+        subject: "Дэлгүүрээ идэвхжүүлнэ үү",
+        message: `Сайн байна уу ${seller.name}, холбоос дээр дарж дэлгүүрээ идэвхжүүлнэ үү: ${activationUrl}`,
       });
       res.status(201).json({
         success: true,
-        message: `please check your email:- ${seller.email} to activate your shop!`,
+        message: `цахим шуудангаа шалгана уу:- ${seller.email} дэлгүүрээ идэвхжүүлнэ үү!`,
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -79,7 +79,7 @@ router.post(
       );
 
       if (!newSeller) {
-        return next(new ErrorHandler("Invalid token", 400));
+        return next(new ErrorHandler("Буруу Token", 400));
       }
       const { name, email, password, avatar, zipCode, address, phoneNumber } =
         newSeller;
@@ -87,7 +87,7 @@ router.post(
       let seller = await Shop.findOne({ email });
 
       if (seller) {
-        return next(new ErrorHandler("User already exists", 400));
+        return next(new ErrorHandler("Хэрэглэгч бүртгэгдсэн байна", 400));
       }
 
       seller = await Shop.create({
@@ -115,20 +115,20 @@ router.post(
       const { email, password } = req.body;
 
       if (!email || !password) {
-        return next(new ErrorHandler("Please provide the all fields!", 400));
+        return next(new ErrorHandler("Бүх талбарыг бөглөнө үү!", 400));
       }
 
       const user = await Shop.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists!", 400));
+        return next(new ErrorHandler("Хэрэглэгч байхгүй байна!", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Зөв мэдээлэл өгнө үү", 400)
         );
       }
 
@@ -148,7 +148,7 @@ router.get(
       const seller = await Shop.findById(req.seller._id);
 
       if (!seller) {
-        return next(new ErrorHandler("User doesn't exists", 400));
+        return next(new ErrorHandler("Хэрэглэгч байхгүй байна", 400));
       }
 
       res.status(200).json({
@@ -174,7 +174,7 @@ router.get(
       });
       res.status(201).json({
         success: true,
-        message: "Log out successful!",
+        message: "Амжилттай гарлаа!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -244,7 +244,7 @@ router.put(
       const shop = await Shop.findOne(req.seller._id);
 
       if (!shop) {
-        return next(new ErrorHandler("User not found", 400));
+        return next(new ErrorHandler("Хэрэглэгч олдсонгүй", 400));
       }
 
       shop.name = name;
@@ -296,7 +296,7 @@ router.delete(
 
       if (!seller) {
         return next(
-          new ErrorHandler("Seller is not available with this id", 400)
+          new ErrorHandler("Энэ ID-тай борлуулагч байхгүй байна", 400)
         );
       }
 
@@ -304,7 +304,7 @@ router.delete(
 
       res.status(201).json({
         success: true,
-        message: "Seller deleted successfully!",
+        message: "Худалдагч амжилттай устгагдсан!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -343,7 +343,7 @@ router.delete(
       const seller = await Shop.findById(req.seller._id);
 
       if (!seller) {
-        return next(new ErrorHandler("Seller not found with this id", 400));
+        return next(new ErrorHandler("Энэ ID-тай борлуулагч олдсонгүй", 400));
       }
 
       seller.withdrawMethod = null;

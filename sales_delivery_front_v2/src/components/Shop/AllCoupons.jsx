@@ -41,7 +41,7 @@ const AllCoupons = () => {
 
   const handleDelete = async (id) => {
     axios.delete(`${server}/coupon/delete-coupon/${id}`,{withCredentials: true}).then((res) => {
-      toast.success("Coupon code deleted succesfully!")
+      toast.success("Купоны кодыг амжилттай устгалаа!")
     })
     window.location.reload();
   };
@@ -63,7 +63,7 @@ const AllCoupons = () => {
         { withCredentials: true }
       )
       .then((res) => {
-       toast.success("Coupon code created successfully!");
+       toast.success("Купоны кодыг амжилттай үүсгэсэн!");
        setOpen(false);
        window.location.reload();
       })
@@ -76,13 +76,13 @@ const AllCoupons = () => {
     { field: "id", headerName: "Id", minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Coupon Code",
+      headerName: "Купон код",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "price",
-      headerName: "Value",
+      headerName: "Үнэ цэнэ",
       minWidth: 100,
       flex: 0.6,
     },
@@ -149,14 +149,14 @@ const AllCoupons = () => {
                   />
                 </div>
                 <h5 className="text-[30px] font-Poppins text-center">
-                  Create Coupon code
+                Купон код үүсгэх
                 </h5>
                 {/* create coupoun code */}
                 <form onSubmit={handleSubmit} aria-required={true}>
                   <br />
                   <div>
                     <label className="pb-2">
-                      Name <span className="text-red-500">*</span>
+                      Нэр <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -171,7 +171,7 @@ const AllCoupons = () => {
                   <br />
                   <div>
                     <label className="pb-2">
-                      Discount Percentenge{" "}
+                    Хөнгөлөлтийн хувь{" "}
                       <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -181,43 +181,43 @@ const AllCoupons = () => {
                       required
                       className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => setValue(e.target.value)}
-                      placeholder="Enter your coupon code value..."
+                      placeholder="Купон кодын утгыг оруулна уу..."
                     />
                   </div>
                   <br />
                   <div>
-                    <label className="pb-2">Min Amount</label>
+                    <label className="pb-2">Хамгийн бага дүн</label>
                     <input
                       type="number"
                       name="value"
                       value={minAmount}
                       className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => setMinAmout(e.target.value)}
-                      placeholder="Enter your coupon code min amount..."
+                      placeholder="Купон кодоо оруулна уу."
                     />
                   </div>
                   <br />
                   <div>
-                    <label className="pb-2">Max Amount</label>
+                    <label className="pb-2">Хамгийн их хэмжээ</label>
                     <input
                       type="number"
                       name="value"
                       value={maxAmount}
                       className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => setMaxAmount(e.target.value)}
-                      placeholder="Enter your coupon code max amount..."
+                      placeholder="Купон кодоо хамгийн их хэмжээгээр оруулна уу..."
                     />
                   </div>
                   <br />
                   <div>
-                    <label className="pb-2">Selected Product</label>
+                    <label className="pb-2">Сонгосон бүтээгдэхүүн</label>
                     <select
                       className="w-full mt-2 border h-[35px] rounded-[5px]"
                       value={selectedProducts}
                       onChange={(e) => setSelectedProducts(e.target.value)}
                     >
-                      <option value="Choose your selected products">
-                        Choose a selected product
+                      <option value="CСонгосон бүтээгдэхүүнээ аваарай">
+                      Сонгосон бүтээгдэхүүнээ сонгоно уу
                       </option>
                       {products &&
                         products.map((i) => (

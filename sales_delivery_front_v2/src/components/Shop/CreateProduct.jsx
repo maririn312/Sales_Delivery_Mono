@@ -26,7 +26,7 @@ const CreateProduct = () => {
       toast.error(error);
     }
     if (success) {
-      toast.success("Product created successfully!");
+      toast.success("Бүтээгдэхүүнийг амжилттай бүтээсэн!");
       navigate("/dashboard");
       window.location.reload();
     }
@@ -57,14 +57,14 @@ const CreateProduct = () => {
     images.forEach((image) => {
       newForm.set("images", image);
     });
-    newForm.append("name", name);
-    newForm.append("description", description);
-    newForm.append("category", category);
-    newForm.append("tags", tags);
-    newForm.append("originalPrice", originalPrice);
-    newForm.append("discountPrice", discountPrice);
-    newForm.append("stock", stock);
-    newForm.append("shopId", seller._id);
+    newForm.append("нэр", name);
+    newForm.append("тайлбар", description);
+    newForm.append("ангилал", category);
+    newForm.append("шошго", tags);
+    newForm.append("жинхэнэ үнэ", originalPrice);
+    newForm.append("хямдралтай үнэ", discountPrice);
+    newForm.append("Нөөц", stock);
+    newForm.append("дэлгүүрийн дугаар", seller._id);
     dispatch(
       createProduct({
         name,
@@ -88,7 +88,7 @@ const CreateProduct = () => {
         <br />
         <div>
           <label className="pb-2">
-            Name <span className="text-red-500">*</span>
+            Нэр <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -96,13 +96,13 @@ const CreateProduct = () => {
             value={name}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your product name..."
+            placeholder="Бүтээгдэхүүнийхээ нэрийг оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Description <span className="text-red-500">*</span>
+          Тодорхойлолт <span className="text-red-500">*</span>
           </label>
           <textarea
             cols="30"
@@ -113,20 +113,20 @@ const CreateProduct = () => {
             value={description}
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Enter your product description..."
+            placeholder="Бүтээгдэхүүнийхээ тайлбарыг оруулна уу..."
           ></textarea>
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Category <span className="text-red-500">*</span>
+          Ангилал <span className="text-red-500">*</span>
           </label>
           <select
             className="w-full mt-2 border h-[35px] rounded-[5px]"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="Choose a category">Choose a category</option>
+            <option value="Ангилал сонгоно уу">Ангилал сонгоно уу</option>
             {categoriesData &&
               categoriesData.map((i) => (
                 <option value={i.title} key={i.title}>
@@ -137,32 +137,32 @@ const CreateProduct = () => {
         </div>
         <br />
         <div>
-          <label className="pb-2">Tags</label>
+          <label className="pb-2">Шошго</label>
           <input
             type="text"
             name="tags"
             value={tags}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setTags(e.target.value)}
-            placeholder="Enter your product tags..."
+            placeholder="Бүтээгдэхүүний шошгоо оруулна уу..."
           />
         </div>
         <br />
         <div>
-          <label className="pb-2">Original Price</label>
+          <label className="pb-2">Жинхэнэ үнэ</label>
           <input
             type="number"
             name="price"
             value={originalPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setOriginalPrice(e.target.value)}
-            placeholder="Enter your product price..."
+            placeholder="Бүтээгдэхүүнийхээ үнийг оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Price (With Discount) <span className="text-red-500">*</span>
+          Price (With Discount) <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -170,13 +170,13 @@ const CreateProduct = () => {
             value={discountPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDiscountPrice(e.target.value)}
-            placeholder="Enter your product price with discount..."
+            placeholder="Хямдралтай үнээ оруулаарай..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Product Stock <span className="text-red-500">*</span>
+          Бүтээгдэхүүний нөөц <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -184,13 +184,13 @@ const CreateProduct = () => {
             value={stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            placeholder="Enter your product stock..."
+            placeholder="Бүтээгдэхүүний нөөцөө оруулна уу..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Upload Images <span className="text-red-500">*</span>
+          Зураг байршуулах <span className="text-red-500">*</span>
           </label>
           <input
             type="file"

@@ -16,7 +16,7 @@ router.post("/create-user", async (req, res, next) => {
     const userEmail = await User.findOne({ email });
 
     if (userEmail) {
-      return next(new ErrorHandler("User already exists", 400));
+      return next(new ErrorHandler("Хэрэглэгч бүртгэгдсэн байна", 400));
     }
 
     const myCloud = await cloudinary.v2.uploader.upload(avatar, {
@@ -35,7 +35,7 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `http://localhost:3000/activation/${activationToken}`;
+    const activationUrl = `http://192.168.1.2:3000/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -45,7 +45,7 @@ router.post("/create-user", async (req, res, next) => {
       });
       res.status(201).json({
         success: true,
-        message: `Та цахим хаяг аа  идвэхжүүлэн үү:- ${user.email}!`,
+        message: `Та цахим хаяг аа  идэвхжүүлнэ үү:- ${user.email}!`,
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -108,7 +108,7 @@ router.post(
       const { email, password } = req.body;
 
       if (!email || !password) {
-        return next(new ErrorHandler("Бүх талбарыг оруулна уу!", 400));
+        return next(new ErrorHandler("Бүх талбарыг бөглөнө үү!", 400));
       }
 
       const user = await User.findOne({ email }).select("+password");
@@ -121,7 +121,7 @@ router.post(
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Зөв мэдээлэл оруулна уу", 400)
         );
       }
 
@@ -167,7 +167,7 @@ router.get(
       });
       res.status(201).json({
         success: true,
-        message: "Log out successful!",
+        message: "Амжилттай гарлаа!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -186,14 +186,14 @@ router.put(
       const user = await User.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User not found", 400));
+        return next(new ErrorHandler("Хэрэглэгч олдсонгүй", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Зөв мэдээлэл оруулна уу", 400)
         );
       }
 
@@ -261,7 +261,7 @@ router.put(
       );
       if (sameTypeAddress) {
         return next(
-          new ErrorHandler(`${req.body.addressType} address already exists`)
+          new ErrorHandler(`${req.body.addressType} хаяг аль хэдийн бүртгэлтэй байна`)
         );
       }
 
@@ -326,12 +326,12 @@ router.put(
       );
 
       if (!isPasswordMatched) {
-        return next(new ErrorHandler("Old password is incorrect!", 400));
+        return next(new ErrorHandler("Хуучин нууц үг буруу!", 400));
       }
 
       if (req.body.newPassword !== req.body.confirmPassword) {
         return next(
-          new ErrorHandler("Password doesn't matched with each other!", 400)
+          new ErrorHandler("Нууц үг хоорондоо таарахгүй байна!", 400)
         );
       }
       user.password = req.body.newPassword;
@@ -340,7 +340,7 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Password updated successfully!",
+        message: "Нууц үг амжилттай шинэчлэгдсэн!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -396,7 +396,7 @@ router.delete(
 
       if (!user) {
         return next(
-          new ErrorHandler("User is not available with this id", 400)
+          new ErrorHandler("Энэ ID-тай хэрэглэгч боломжгүй", 400)
         );
       }
 
@@ -408,7 +408,7 @@ router.delete(
 
       res.status(201).json({
         success: true,
-        message: "User deleted successfully!",
+        message: "Хэрэглэгч амжилттай устгагдлаа!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));

@@ -50,9 +50,9 @@ const Singup = () => {
       if (error.response) {
         toast.error(error.response.data.message);
       } else if (error.request) {
-        toast.error("No response from the server");
+        toast.error("Серверээс хариу ирээгүй");
       } else {
-        toast.error("Error occurred: " + error.message);
+        toast.error("Алдаа гарсан: " + error.message);
       }
     }
   };
@@ -61,7 +61,7 @@ const Singup = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Register as a new user
+        Шинэ хэрэглэгчээр бүртгүүлнэ үү
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -72,7 +72,7 @@ const Singup = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Full Name
+                Бүтэн нэр
               </label>
               <div className="mt-1">
                 <input
@@ -92,7 +92,7 @@ const Singup = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Email address
+                Имэйл хаяг
               </label>
               <div className="mt-1">
                 <input
@@ -112,7 +112,7 @@ const Singup = () => {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700"
               >
-                Password
+                Нууц үг
               </label>
               <div className="mt-1 relative">
                 <input
@@ -161,7 +161,7 @@ const Singup = () => {
                   htmlFor="file-input"
                   className="ml-5 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
                 >
-                  <span>Upload a file</span>
+                  <span>Файл байршуулах</span>
                   <input
                     type="file"
                     name="avatar"
@@ -183,9 +183,9 @@ const Singup = () => {
               </button>
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
-              <h4>Already have an account?</h4>
+              <h4>Бүртгэлтэй юу?</h4>
               <Link to="/login" className="text-blue-600 pl-2">
-                Sign In
+              Нэвтрэх
               </Link>
             </div>
           </form>

@@ -39,14 +39,14 @@ const ProductDetailsCard = ({ setOpen, data }) => {
   const addToCartHandler = (id) => {
     const isItemExists = cart && cart.find((i) => i._id === id);
     if (isItemExists) {
-      toast.error("Item already in cart!");
+      toast.error("Бараа аль хэдийн сагсанд байна!");
     } else {
       if (data.stock < count) {
-        toast.error("Product stock limited!");
+        toast.error("Бүтээгдэхүүний нөөц хязгаарлагдмал!");
       } else {
         const cartData = { ...data, qty: count };
         dispatch(addTocart(cartData));
-        toast.success("Item added to cart successfully!");
+        toast.success("Барааг сагсанд амжилттай нэмлээ!");
       }
     }
   };
@@ -94,7 +94,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <h3 className={`${styles.shop_name}`}>
                         {data.shop.name}
                       </h3>
-                      <h5 className="pb-3 text-[15px]">{data?.ratings} Ratings</h5>
+                      <h5 className="pb-3 text-[15px]">{data?.ratings} Үнэлгээ</h5>
                     </div>
                   </Link>
                 </div>
@@ -103,7 +103,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   onClick={handleMessageSubmit}
                 >
                   <span className="text-[#fff] flex items-center">
-                    Send Message <AiOutlineMessage className="ml-1" />
+                    Зурвас илгээх <AiOutlineMessage className="ml-1" />
                   </span>
                 </div>
                 <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5>
@@ -117,10 +117,10 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
-                    {data.discountPrice}$
+                    {data.discountPrice}төг
                   </h4>
                   <h3 className={`${styles.price}`}>
-                    {data.originalPrice ? data.originalPrice + "$" : null}
+                    {data.originalPrice ? data.originalPrice + "төг" : null}
                   </h3>
                 </div>
                 <div className="flex items-center mt-12 justify-between pr-3">
@@ -148,14 +148,14 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                         className="cursor-pointer"
                         onClick={() => removeFromWishlistHandler(data)}
                         color={click ? "red" : "#333"}
-                        title="Remove from wishlist"
+                        title="Хүслийн жагсаалтаас хасах"
                       />
                     ) : (
                       <AiOutlineHeart
                         size={30}
                         className="cursor-pointer"
                         onClick={() => addToWishlistHandler(data)}
-                        title="Add to wishlist"
+                        title="Хүслийн жагсаалтад нэмнэ үү"
                       />
                     )}
                   </div>

@@ -11,7 +11,7 @@ const withdrawSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    default: "Processing",
+    default: "Боловсруулж байна",
   },
   createdAt: {
     type: Date,

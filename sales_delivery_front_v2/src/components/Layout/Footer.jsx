@@ -19,18 +19,18 @@ const Footer = () => {
         <h1 className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5">
           <span className="text-[#56d879]">Subscribe</span> us for get news{" "}
           <br />
-          events and offers
+          үйл явдал, санал
         </h1>
         <div>
           <input
             type="text"
             required
-            placeholder="Enter your email..."
+            placeholder="Имэйлээ оруулна уу..."
             className="text-gray-800
                 sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
           />
           <button className="bg-[#56d879] hover:bg-teal-500 duration-300 px-5 py-2.5 rounded-md text-whie md:w-auto w-full">
-            Submit
+          Илгээх
           </button>
         </div>
       </div>
@@ -42,7 +42,7 @@ const Footer = () => {
             style={{ filter: "brightness(0) invert(1)" }}
           />
           <br />
-          <p>The home and elements needeed to create beatiful products.</p>
+          <p>Гоёмсог бүтээгдэхүүнийг бий болгоход шаардлагатай гэр, элементүүд.</p>
           <div className="flex items-center mt-[15px]">
             <AiFillFacebook size={25} className="cursor-pointer" />
             <AiOutlineTwitter
@@ -61,7 +61,7 @@ const Footer = () => {
         </ul>
 
         <ul className="text-center sm:text-start">
-          <h1 className="mb-1 font-semibold">Company</h1>
+          <h1 className="mb-1 font-semibold">Компани</h1>
           {footerProductLinks.map((link,index) => (
             <li key={index}>
               <Link

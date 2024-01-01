@@ -32,24 +32,24 @@ const AllSellers = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "Seller ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Борлуулагчийн ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "name",
-      headerName: "name",
+      headerName: "Нэр",
       minWidth: 130,
       flex: 0.7,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "Имайл",
       type: "text",
       minWidth: 130,
       flex: 0.7,
     },
     {
       field: "address",
-      headerName: "Seller Address",
+      headerName: "Борлуулагчийн хаяг",
       type: "text",
       minWidth: 130,
       flex: 0.7,
@@ -57,7 +57,7 @@ const AllSellers = () => {
 
     {
       field: "joinedAt",
-      headerName: "joinedAt",
+      headerName: "нэгдсэн",
       type: "text",
       minWidth: 130,
       flex: 0.8,
@@ -66,7 +66,7 @@ const AllSellers = () => {
         field: "  ",
         flex: 1,
         minWidth: 150,
-        headerName: "Preview Shop",
+        headerName: "Дэлгүүрийг урьдчилан үзэх",
         type: "number",
         sortable: false,
         renderCell: (params) => {
@@ -85,7 +85,7 @@ const AllSellers = () => {
       field: " ",
       flex: 1,
       minWidth: 150,
-      headerName: "Delete Seller",
+      headerName: "Борлуулагч устгах",
       type: "number",
       sortable: false,
       renderCell: (params) => {

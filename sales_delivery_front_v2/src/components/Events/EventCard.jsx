@@ -13,14 +13,14 @@ const EventCard = ({ active, data }) => {
   const addToCartHandler = (data) => {
     const isItemExists = cart && cart.find((i) => i._id === data._id);
     if (isItemExists) {
-      toast.error("Item already in cart!");
+      toast.error("Бараа аль хэдийн сагсанд байна!");
     } else {
       if (data.stock < 1) {
-        toast.error("Product stock limited!");
+        toast.error("Бүтээгдэхүүний нөөц хязгаарлагдмал!");
       } else {
         const cartData = { ...data, qty: 1 };
         dispatch(addTocart(cartData));
-        toast.success("Item added to cart successfully!");
+        toast.success("Барааг сагсанд амжилттай нэмлээ!");
       }
     }
   }
@@ -53,9 +53,9 @@ const EventCard = ({ active, data }) => {
         <br />
         <div className="flex items-center">
           <Link to={`/product/${data._id}?isEvent=true`}>
-            <div className={`${styles.button} text-[#fff]`}>See Details</div>
+            <div className={`${styles.button} text-[#fff]`}>Дэлгэрэнгүйг үзнэ үү</div>
           </Link>
-          <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>Add to cart</div>
+          <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>сагсанд нэмэх</div>
         </div>
       </div>
     </div>

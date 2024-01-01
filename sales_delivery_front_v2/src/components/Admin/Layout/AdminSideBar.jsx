@@ -24,7 +24,7 @@ const AdminSideBar = ({ active }) => {
               active === 1 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Dashboard
+            Хяналтын самбар
           </h5>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const AdminSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
+            Бүх захиалга
           </h5>
         </Link>
       </div>
@@ -56,7 +56,7 @@ const AdminSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Sellers
+            Бүх борлуулагч
           </h5>
         </Link>
       </div>
@@ -72,7 +72,7 @@ const AdminSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Users
+            Бүх хэрэглэгч
           </h5>
         </Link>
       </div>
@@ -88,7 +88,7 @@ const AdminSideBar = ({ active }) => {
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
+            Бүх бараа
           </h5>
         </Link>
       </div>
@@ -125,7 +125,7 @@ const AdminSideBar = ({ active }) => {
               active === 7 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Withdraw Request
+            Буцаах хүсэлт
           </h5>
         </Link>
       </div>

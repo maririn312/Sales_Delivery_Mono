@@ -63,11 +63,11 @@ const ShopInfo = ({ isOwner }) => {
         </p>
       </div>
       <div className="p-3">
-        <h5 className="font-[600]">Address</h5>
+        <h5 className="font-[600]">Хаяг</h5>
         <h4 className="text-[#000000a6]">{data.address}</h4>
       </div>
       <div className="p-3">
-        <h5 className="font-[600]">Phone Number</h5>
+        <h5 className="font-[600]">Утасны дугаар</h5>
         <h4 className="text-[#000000a6]">{data.phoneNumber}</h4>
       </div>
       <div className="p-3">

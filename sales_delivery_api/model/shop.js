@@ -5,16 +5,16 @@ const jwt = require("jsonwebtoken");
 const shopSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please enter your shop name!"],
+    required: [true, "Дэлгүүрийнхээ нэрийг оруулна уу!"],
   },
   email: {
     type: String,
-    required: [true, "Please enter your shop email address"],
+    required: [true, "Дэлгүүрийн имэйл хаягаа оруулна уу"],
   },
   password: {
     type: String,
-    required: [true, "Please enter your password"],
-    minLength: [6, "Password should be greater than 6 characters"],
+    required: [true, "Нууц үгээ оруулна уу"],
+    minLength: [6, "Нууц үг 6 тэмдэгтээс их байх ёстой"],
     select: false,
   },
   description: {
@@ -30,7 +30,7 @@ const shopSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    default: "Seller",
+    default: "Борлуулагч",
   },
   avatar: {
     public_id: {
@@ -61,7 +61,7 @@ const shopSchema = new mongoose.Schema({
       },
       status: {
         type: String,
-        default: "Processing",
+        default: "Боловсруулж байна",
       },
       createdAt: {
         type: Date,

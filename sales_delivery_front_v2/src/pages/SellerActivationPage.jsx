@@ -37,9 +37,9 @@ const SellerActivationPage = () => {
       }}
     >
       {error ? (
-        <p>Your token is expired!</p>
+        <p>Таны токены хугацаа дууссан!</p>
       ) : (
-        <p>Your account has been created suceessfully!</p>
+        <p>Таны бүртгэл амжилттай үүсгэгдсэн!</p>
       )}
     </div>
   );

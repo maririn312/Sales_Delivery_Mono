@@ -17,7 +17,7 @@ router.post(
       });
 
       if (isCoupounCodeExists.length !== 0) {
-        return next(new ErrorHandler("Coupoun code already exists!", 400));
+        return next(new ErrorHandler("Купон код аль хэдийн ашиглагдсан байна!", 400));
       }
 
       const coupounCode = await CoupounCode.create(req.body);
@@ -58,11 +58,11 @@ router.delete(
       const couponCode = await CoupounCode.findByIdAndDelete(req.params.id);
 
       if (!couponCode) {
-        return next(new ErrorHandler("Coupon code dosen't exists!", 400));
+        return next(new ErrorHandler("Купон код байхгүй байна!", 400));
       }
       res.status(201).json({
         success: true,
-        message: "Coupon code deleted successfully!",
+        message: "Купоны кодыг амжилттай устгалаа!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));

@@ -34,7 +34,7 @@ const Faq = () => {
             onClick={() => toggleTab(2)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What is your return policy?
+            Таны буцах бодлого юу вэ?
             </span>
             {activeTab === 2 ? (
               <svg
@@ -69,10 +69,10 @@ const Faq = () => {
           {activeTab === 2 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                If you're not satisfied with your purchase, we accept returns
-                within 30 days of delivery. To initiate a return, please email
-                us at support@myecommercestore.com with your order number and a
-                brief explanation of why you're returning the item.
+              Хэрэв та худалдан авалтдаа сэтгэл хангалуун бус байвал бид буцаан олголтыг хүлээн авна
+                хүргэснээс хойш 30 хоногийн дотор. Буцааж эхлэхийн тулд имэйл илгээнэ үү
+                support@myecommercestore.com хаягаар бидэнд захиалгын дугаар болон a
+                Та яагаад бараагаа буцааж байгаа тухай товч тайлбар.
               </p>
             </div>
           )}
@@ -84,7 +84,7 @@ const Faq = () => {
             onClick={() => toggleTab(3)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I track my order?
+            Би захиалгаа хэрхэн хянах вэ?
             </span>
             {activeTab === 3 ? (
               <svg
@@ -119,9 +119,9 @@ const Faq = () => {
           {activeTab === 3 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can track your order by clicking the tracking link in your
-                shipping confirmation email, or by logging into your account on
-                our website and viewing the order details.
+              Та өөрийн захиалгыг хянах холбоос дээр дарж захиалах боломжтой
+                хүргэлтийн баталгаажуулах и-мэйл, эсвэл данс руугаа нэвтэрч орно уу
+                манай вэбсайт болон захиалгын дэлгэрэнгүй мэдээллийг үзэх.
               </p>
             </div>
           )}
@@ -133,7 +133,7 @@ const Faq = () => {
             onClick={() => toggleTab(4)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I contact customer support?
+            Би хэрэглэгчийн дэмжлэгтэй хэрхэн холбогдох вэ?
             </span>
             {activeTab === 4 ? (
               <svg
@@ -168,9 +168,9 @@ const Faq = () => {
           {activeTab === 4 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can contact our customer support team by emailing us at
-                support@myecommercestore.com, or by calling us at (555) 123-4567
-                between the hours of 9am and 5pm EST, Monday through Friday.
+              Та манай хэрэглэгчийн тусламжийн багтай бидэнтэй имэйлээр холбогдож болно
+                support@myecommercestore.com, эсвэл бидэнтэй +97612345678 утсаар холбогдоно уу.
+                Даваагаас Баасан гараг хүртэл 9-17 цагийн хооронд.
               </p>
             </div>
           )}
@@ -182,7 +182,7 @@ const Faq = () => {
             onClick={() => toggleTab(5)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Can I change or cancel my order?
+            Би захиалгаа өөрчлөх эсвэл цуцлах боломжтой юу?
             </span>
             {activeTab === 5 ? (
               <svg
@@ -217,10 +217,10 @@ const Faq = () => {
           {activeTab === 5 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Unfortunately, once an order has been placed, we are not able to
-                make changes or cancellations. If you no longer want the items
-                you've ordered, you can return them for a refund within 30 days
-                of delivery.
+              Харамсалтай нь нэгэнт захиалга өгчихөөд амжихгүй байна
+                өөрчлөлт эсвэл цуцлалт хийх. Хэрэв та эд зүйлсийг хүсэхгүй байвал
+                Та захиалсан бол 30 хоногийн дотор буцаан олголт хийх боломжтой
+                хүргэх.
               </p>
             </div>
           )}
@@ -232,7 +232,7 @@ const Faq = () => {
             onClick={() => toggleTab(6)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Do you offer international shipping?
+            Та олон улсын тээвэрлэлтийг санал болгодог уу?
             </span>
             {activeTab === 6 ? (
               <svg
@@ -267,7 +267,7 @@ const Faq = () => {
           {activeTab === 6 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Currently, we only offer shipping within the United States.
+              Одоогоор бид зөвхөн АНУ-ын дотор тээвэрлэлтийг санал болгож байна.
               </p>
             </div>
           )}
@@ -279,7 +279,7 @@ const Faq = () => {
             onClick={() => toggleTab(7)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What payment methods do you accept?
+            Та ямар төлбөрийн аргыг хүлээн зөвшөөрдөг вэ?
             </span>
             {activeTab === 7 ? (
               <svg
@@ -314,8 +314,8 @@ const Faq = () => {
           {activeTab === 7 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                We accept visa,mastercard,paypal payment method also we have
-                cash on delivery system.
+              Бидэнд виз, мастер карт, paypal төлбөрийн хэрэгслийг хүлээн зөвшөөрдөг
+                бэлэн мөнгө хүргэх систем.
               </p>
             </div>
           )}

@@ -15,7 +15,7 @@ router.post(
       const shopId = req.body.shopId;
       const shop = await Shop.findById(shopId);
       if (!shop) {
-        return next(new ErrorHandler("Shop Id is invalid!", 400));
+        return next(new ErrorHandler("Дэлгүүрийн ID хүчингүй байна!", 400));
       } else {
         let images = [];
 
@@ -93,7 +93,7 @@ router.delete(
       const event = await Event.findById(req.params.id);
 
       if (!product) {
-        return next(new ErrorHandler("Product is not found with this id", 404));
+        return next(new ErrorHandler("Энэ ID-тай бүтээгдэхүүн олдсонгүй", 404));
       }    
 
       for (let i = 0; 1 < product.images.length; i++) {
@@ -106,7 +106,7 @@ router.delete(
 
       res.status(201).json({
         success: true,
-        message: "Event Deleted successfully!",
+        message: "Үйл явдлыг амжилттай устгалаа!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));

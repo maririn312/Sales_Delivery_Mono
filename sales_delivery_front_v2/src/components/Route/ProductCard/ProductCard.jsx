@@ -48,14 +48,14 @@ const ProductCard = ({ data,isEvent }) => {
   const addToCartHandler = (id) => {
     const isItemExists = cart && cart.find((i) => i._id === id);
     if (isItemExists) {
-      toast.error("Item already in cart!");
+      toast.error("Бараа аль хэдийн сагсанд байна!");
     } else {
       if (data.stock < 1) {
-        toast.error("Product stock limited!");
+        toast.error("Бүтээгдэхүүний нөөц хязгаарлагдмал!");
       } else {
         const cartData = { ...data, qty: 1 };
         dispatch(addTocart(cartData));
-        toast.success("Item added to cart successfully!");
+        toast.success("Барааг сагсанд амжилттай нэмлээ!");
       }
     }
   };
@@ -92,7 +92,7 @@ const ProductCard = ({ data,isEvent }) => {
                 $
               </h5>
               <h4 className={`${styles.price}`}>
-                {data.originalPrice ? data.originalPrice + " $" : null}
+                {data.originalPrice ? data.originalPrice + " Төг" : null}
               </h4>
             </div>
             <span className="font-[400] text-[17px] text-[#68d284]">
@@ -109,7 +109,7 @@ const ProductCard = ({ data,isEvent }) => {
               className="cursor-pointer absolute right-2 top-5"
               onClick={() => removeFromWishlistHandler(data)}
               color={click ? "red" : "#333"}
-              title="Remove from wishlist"
+              title="Хүслийн жагсаалтаас хасах"
             />
           ) : (
             <AiOutlineHeart
@@ -117,7 +117,7 @@ const ProductCard = ({ data,isEvent }) => {
               className="cursor-pointer absolute right-2 top-5"
               onClick={() => addToWishlistHandler(data)}
               color={click ? "red" : "#333"}
-              title="Add to wishlist"
+              title="Хүслийн жагсаалтад нэмнэ үү"
             />
           )}
           <AiOutlineEye
@@ -125,14 +125,14 @@ const ProductCard = ({ data,isEvent }) => {
             className="cursor-pointer absolute right-2 top-14"
             onClick={() => setOpen(!open)}
             color="#333"
-            title="Quick view"
+            title="Түргэн харах"
           />
           <AiOutlineShoppingCart
             size={25}
             className="cursor-pointer absolute right-2 top-24"
             onClick={() => addToCartHandler(data._id)}
             color="#444"
-            title="Add to cart"
+            title="Сагсанд нэмэх"
           />
           {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null}
         </div>

@@ -28,42 +28,42 @@ const AllWithdraw = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Withdraw Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Буцаалтын Id", minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Shop Name",
+      headerName: "Дэлгүүрийн нэр",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "shopId",
-      headerName: "Shop Id",
+      headerName: "Дэлгүүрийн ID",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "amount",
-      headerName: "Amount",
+      headerName: "Дүн",
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "status",
-      headerName: "status",
+      headerName: "статус",
       type: "text",
       minWidth: 80,
       flex: 0.5,
     },
     {
       field: "createdAt",
-      headerName: "Request given at",
+      headerName: "Хүсэлтийг хаягаар өгсөн",
       type: "number",
       minWidth: 130,
       flex: 0.6,
     },
     {
       field: " ",
-      headerName: "Update Status",
+      headerName: "Статусыг шинэчлэх",
       type: "number",
       minWidth: 130,
       flex: 0.6,
@@ -86,7 +86,7 @@ const AllWithdraw = () => {
         sellerId: withdrawData.shopId,
       },{withCredentials: true})
       .then((res) => {
-        toast.success("Withdraw request updated successfully!");
+        toast.success("Татгалзах хүсэлтийг амжилттай шинэчилсэн!");
         setData(res.data.withdraws);
         setOpen(false);
       });
@@ -100,7 +100,7 @@ const AllWithdraw = () => {
         id: item._id,
         shopId: item.seller._id,
         name: item.seller.name,
-        amount: "US$ " + item.amount,
+        amount: "Төг " + item.amount,
         status: item.status,
         createdAt: item.createdAt.slice(0, 10),
       });

@@ -28,7 +28,7 @@ const Checkout = () => {
 
   const paymentSubmit = () => {
    if(address1 === "" || address2 === "" || zipCode === null || country === "" || city === ""){
-      toast.error("Please choose your delivery address!")
+      toast.error("Хүргэлтийн хаягаа сонгоно уу!")
    } else{
     const shippingAddress = {
       address1,
@@ -74,7 +74,7 @@ const Checkout = () => {
           cart && cart.filter((item) => item.shopId === shopId);
 
         if (isCouponValid.length === 0) {
-          toast.error("Coupon code is not valid for this shop");
+          toast.error("Купон код энэ дэлгүүрт хүчингүй");
           setCouponCode("");
         } else {
           const eligiblePrice = isCouponValid.reduce(
@@ -88,7 +88,7 @@ const Checkout = () => {
         }
       }
       if (res.data.couponCode === null) {
-        toast.error("Coupon code doesn't exists!");
+        toast.error("Купон код байхгүй байна!");
         setCouponCode("");
       }
     });
@@ -161,12 +161,12 @@ const ShippingInfo = ({
 }) => {
   return (
     <div className="w-full 800px:w-[95%] bg-white rounded-md p-5 pb-8">
-      <h5 className="text-[18px] font-[500]">Shipping Address</h5>
+      <h5 className="text-[18px] font-[500]">Хүргүүлэх хаяг</h5>
       <br />
       <form>
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Full Name</label>
+            <label className="block pb-2">Нэр</label>
             <input
               type="text"
               value={user && user.name}
@@ -175,7 +175,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Email Address</label>
+            <label className="block pb-2">Имайл хаяг</label>
             <input
               type="email"
               value={user && user.email}
@@ -187,7 +187,7 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Phone Number</label>
+            <label className="block pb-2">Утасны дугаар</label>
             <input
               type="number"
               required
@@ -196,7 +196,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Zip Code</label>
+            <label className="block pb-2">Зип код</label>
             <input
               type="number"
               value={zipCode}
@@ -209,7 +209,7 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Country</label>
+            <label className="block pb-2">Улс</label>
             <select
               className="w-[95%] border h-[40px] rounded-[5px]"
               value={country}
@@ -248,7 +248,7 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Address1</label>
+            <label className="block pb-2">хаяг1</label>
             <input
               type="address"
               required
@@ -258,7 +258,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Address2</label>
+            <label className="block pb-2">хаяг2</label>
             <input
               type="address"
               value={address2}
@@ -275,7 +275,7 @@ const ShippingInfo = ({
         className="text-[18px] cursor-pointer inline-block"
         onClick={() => setUserInfo(!userInfo)}
       >
-        Choose From saved address
+        Хадгалсан хаягаас сонгоно уу
       </h5>
       {userInfo && (
         <div>

@@ -24,7 +24,7 @@ const DashboardSideBar = ({ active }) => {
               active === 1 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Dashboard
+            Хяналтын самбар
           </h5>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const DashboardSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
+            Бүх захиалга
           </h5>
         </Link>
       </div>
@@ -53,7 +53,7 @@ const DashboardSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
+            Бүх бүтээгдэхүүн
           </h5>
         </Link>
       </div>
@@ -72,7 +72,7 @@ const DashboardSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Product
+            Бүтээгдэхүүн үүсгэх
           </h5>
         </Link>
       </div>
@@ -88,7 +88,7 @@ const DashboardSideBar = ({ active }) => {
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Events
+            Бүх үйл явдал
           </h5>
         </Link>
       </div>
@@ -104,7 +104,7 @@ const DashboardSideBar = ({ active }) => {
               active === 6 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Event
+            Үйл явдал үүсгэх
           </h5>
         </Link>
       </div>
@@ -123,7 +123,7 @@ const DashboardSideBar = ({ active }) => {
               active === 7 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Withdraw Money
+            Мөнгө татах
           </h5>
         </Link>
       </div>
@@ -139,7 +139,7 @@ const DashboardSideBar = ({ active }) => {
               active === 8 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Shop Inbox
+            Дэлгүүрийн Inbox
           </h5>
         </Link>
       </div>
@@ -155,7 +155,7 @@ const DashboardSideBar = ({ active }) => {
               active === 9 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Discount Codes
+            Хөнгөлөлтийн кодууд
           </h5>
         </Link>
       </div>
@@ -171,7 +171,7 @@ const DashboardSideBar = ({ active }) => {
               active === 10 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Refunds
+           Буцаан олголт
           </h5>
         </Link>
       </div>
@@ -187,7 +187,7 @@ const DashboardSideBar = ({ active }) => {
               active === 11 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Settings
+            Тохиргоо
           </h5>
         </Link>
       </div>

@@ -98,9 +98,9 @@ router.put(
       const order = await Order.findById(req.params.id);
 
       if (!order) {
-        return next(new ErrorHandler("Order not found with this id", 400));
+        return next(new ErrorHandler("Энэ ID-тай захиалга олдсонгүй", 400));
       }
-      if (req.body.status === "Transferred to delivery partner") {
+      if (req.body.status === "Хүргэлтийн ажилтан руу шилжүүлсэн") {
         order.cart.forEach(async (o) => {
           await updateOrder(o._id, o.qty);
         });
@@ -108,9 +108,9 @@ router.put(
 
       order.status = req.body.status;
 
-      if (req.body.status === "Delivered") {
+      if (req.body.status === "Хүргэгдсэн") {
         order.deliveredAt = Date.now();
-        order.paymentInfo.status = "Succeeded";
+        order.paymentInfo.status = "Амжилттай";
         const serviceCharge = order.totalPrice * .10;
         await updateSellerInfo(order.totalPrice - serviceCharge);
       }
@@ -152,7 +152,7 @@ router.put(
       const order = await Order.findById(req.params.id);
 
       if (!order) {
-        return next(new ErrorHandler("Order not found with this id", 400));
+        return next(new ErrorHandler("Энэ ID-тай захиалга олдсонгүй", 400));
       }
 
       order.status = req.body.status;
@@ -162,7 +162,7 @@ router.put(
       res.status(200).json({
         success: true,
         order,
-        message: "Order Refund Request successfully!",
+        message: "Буцаан олголтын хүсэлтийг амжилттай!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -179,7 +179,7 @@ router.put(
       const order = await Order.findById(req.params.id);
 
       if (!order) {
-        return next(new ErrorHandler("Order not found with this id", 400));
+        return next(new ErrorHandler("Энэ ID-тай захиалга олдсонгүй", 400));
       }
 
       order.status = req.body.status;
@@ -188,10 +188,10 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Order Refund successfull!",
+        message: "Захиалгын буцаан олголт амжилттай боллоо!",
       });
 
-      if (req.body.status === "Refund Success") {
+      if (req.body.status === "Буцаан олголтын амжилттай") {
         order.cart.forEach(async (o) => {
           await updateOrder(o._id, o.qty);
         });

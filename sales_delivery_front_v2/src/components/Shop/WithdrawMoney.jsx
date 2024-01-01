@@ -51,7 +51,7 @@ const WithdrawMoney = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        toast.success("Withdraw method added successfully!");
+        toast.success("Татгалзах аргыг амжилттай нэмлээ!");
         dispatch(loadSeller());
         setBankInfo({
           bankName: "",
@@ -73,18 +73,18 @@ const WithdrawMoney = () => {
         withCredentials: true,
       })
       .then((res) => {
-        toast.success("Withdraw method deleted successfully!");
+        toast.success("Татгалзах аргыг амжилттай устгалаа!");
         dispatch(loadSeller());
       });
   };
 
   const error = () => {
-    toast.error("You not have enough balance to withdraw!");
+    toast.error("Танд мөнгө татах хангалттай үлдэгдэл байхгүй!");
   };
 
   const withdrawHandler = async () => {
     if (withdrawAmount < 50 || withdrawAmount > availableBalance) {
-      toast.error("You can't withdraw this amount!");
+      toast.error("Та энэ мөнгийг буцаан авах боломжгүй!");
     } else {
       const amount = withdrawAmount;
       await axios
@@ -94,7 +94,7 @@ const WithdrawMoney = () => {
           { withCredentials: true }
         )
         .then((res) => {
-          toast.success("Withdraw money request is successful!");
+          toast.success("Мөнгө авах хүсэлт амжилттай боллоо!");
         });
     }
   };
@@ -105,13 +105,13 @@ const WithdrawMoney = () => {
     <div className="w-full h-[90vh] p-8">
       <div className="w-full bg-white h-full rounded flex items-center justify-center flex-col">
         <h5 className="text-[20px] pb-4">
-          Available Balance: ${availableBalance}
+        Боломжтой үлдэгдэл: төг{availableBalance}
         </h5>
         <div
           className={`${styles.button} text-white !h-[42px] !rounded`}
           onClick={() => (availableBalance < 50 ? error() : setOpen(true))}
         >
-          Withdraw
+          Татаж авах
         </div>
       </div>
       {open && (
@@ -131,12 +131,12 @@ const WithdrawMoney = () => {
             {paymentMethod ? (
               <div>
                 <h3 className="text-[22px] font-Poppins text-center font-[600]">
-                  Add new Withdraw Method:
+                Татан авалтын шинэ аргыг нэмэх:
                 </h3>
                 <form onSubmit={handleSubmit}>
                   <div>
                     <label>
-                      Bank Name <span className="text-red-500">*</span>
+                    Банкны нэр <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -147,13 +147,13 @@ const WithdrawMoney = () => {
                         setBankInfo({ ...bankInfo, bankName: e.target.value })
                       }
                       id=""
-                      placeholder="Enter your Bank name!"
+                      placeholder="банкны нэрээ оруулна уу!"
                       className={`${styles.input} mt-2`}
                     />
                   </div>
                   <div className="pt-2">
                     <label>
-                      Bank Country <span className="text-red-500">*</span>
+                    Банкны улс <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -167,13 +167,13 @@ const WithdrawMoney = () => {
                       }
                       id=""
                       required
-                      placeholder="Enter your bank Country!"
+                      placeholder="Банкны Улсаа оруулна уу!"
                       className={`${styles.input} mt-2`}
                     />
                   </div>
                   <div className="pt-2">
                     <label>
-                      Bank Swift Code <span className="text-red-500">*</span>
+                    Банкны Swift код <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -187,14 +187,14 @@ const WithdrawMoney = () => {
                           bankSwiftCode: e.target.value,
                         })
                       }
-                      placeholder="Enter your Bank Swift Code!"
+                      placeholder="Банкны Swift кодоо оруулна уу!"
                       className={`${styles.input} mt-2`}
                     />
                   </div>
 
                   <div className="pt-2">
                     <label>
-                      Bank Account Number{" "}
+                    Банкны дансны дугаар{" "}
                       <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -209,13 +209,13 @@ const WithdrawMoney = () => {
                         })
                       }
                       required
-                      placeholder="Enter your bank account number!"
+                      placeholder="Банкны дансны дугаараа оруулна уу!"
                       className={`${styles.input} mt-2`}
                     />
                   </div>
                   <div className="pt-2">
                     <label>
-                      Bank Holder Name <span className="text-red-500">*</span>
+                    Банк эзэмшигчийн нэр <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -236,7 +236,7 @@ const WithdrawMoney = () => {
 
                   <div className="pt-2">
                     <label>
-                      Bank Address <span className="text-red-500">*</span>
+                    Банкны хаяг <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -250,7 +250,7 @@ const WithdrawMoney = () => {
                           bankAddress: e.target.value,
                         })
                       }
-                      placeholder="Enter your bank address!"
+                      placeholder="Банкны хаягаа оруулна уу!"
                       className={`${styles.input} mt-2`}
                     />
                   </div>
@@ -259,14 +259,14 @@ const WithdrawMoney = () => {
                     type="submit"
                     className={`${styles.button} mb-3 text-white`}
                   >
-                    Add
+                    Нэмэх
                   </button>
                 </form>
               </div>
             ) : (
               <>
                 <h3 className="text-[22px] font-Poppins">
-                  Available Withdraw Methods:
+                Татгалзах боломжтой аргууд:
                 </h3>
 
                 {seller && seller?.withdrawMethod ? (
@@ -274,13 +274,13 @@ const WithdrawMoney = () => {
                     <div className="800px:flex w-full justify-between items-center">
                       <div className="800px:w-[50%]">
                         <h5>
-                          Account Number:{" "}
+                        Дансны дугаар:{" "}
                           {"*".repeat(
                             seller?.withdrawMethod.bankAccountNumber.length - 3
                           ) +
                             seller?.withdrawMethod.bankAccountNumber.slice(-3)}
                         </h5>
-                        <h5>Bank Name: {seller?.withdrawMethod.bankName}</h5>
+                        <h5>Банкны нэр: {seller?.withdrawMethod.bankName}</h5>
                       </div>
                       <div className="800px:w-[50%]">
                         <AiOutlineDelete
@@ -291,7 +291,7 @@ const WithdrawMoney = () => {
                       </div>
                     </div>
                     <br />
-                    <h4>Available Balance: {availableBalance}$</h4>
+                    <h4>Боломжтой үлдэгдэл: {availableBalance}$</h4>
                     <br />
                     <div className="800px:flex w-full items-center">
                       <input
@@ -305,14 +305,14 @@ const WithdrawMoney = () => {
                         className={`${styles.button} !h-[42px] text-white`}
                         onClick={withdrawHandler}
                       >
-                        Withdraw
+                        Татаж авах
                       </div>
                     </div>
                   </div>
                 ) : (
                   <div>
                     <p className="text-[18px] pt-2">
-                      No Withdraw Methods available!
+                    Татгалзах арга байхгүй!
                     </p>
                     <div className="w-full flex items-center">
                       <div

@@ -54,7 +54,7 @@ const UserOrderDetails = () => {
   
   const refundHandler = async () => {
     await axios.put(`${server}/order/order-refund/${id}`,{
-      status: "Processing refund"
+      status: "Буцаан олголтыг боловсруулж байна"
     }).then((res) => {
        toast.success(res.data.message);
     dispatch(getAllOrdersOfUser(user._id));
@@ -74,10 +74,10 @@ const UserOrderDetails = () => {
 
       <div className="w-full flex items-center justify-between pt-6">
         <h5 className="text-[#00000084]">
-          Order ID: <span>#{data?._id?.slice(0, 8)}</span>
+        Захиалгын ID: <span>#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#00000084]">
-          Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
+        дээр байрлуулсан: <span>{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 
@@ -96,7 +96,7 @@ const UserOrderDetails = () => {
             <div className="w-full">
               <h5 className="pl-3 text-[20px]">{item.name}</h5>
               <h5 className="pl-3 text-[20px] text-[#00000091]">
-                US${item.discountPrice} x {item.qty}
+                Төг{item.discountPrice} x {item.qty}
               </h5>
             </div>
             {!item.isReviewed && data?.status === "Delivered" ?  <div
@@ -135,7 +135,7 @@ const UserOrderDetails = () => {
               <div>
                 <div className="pl-3 text-[20px]">{selectedItem?.name}</div>
                 <h4 className="pl-3 text-[20px]">
-                  US${selectedItem?.discountPrice} x {selectedItem?.qty}
+                  Төг{selectedItem?.discountPrice} x {selectedItem?.qty}
                 </h4>
               </div>
             </div>
@@ -145,7 +145,7 @@ const UserOrderDetails = () => {
 
             {/* ratings */}
             <h5 className="pl-3 text-[20px] font-[500]">
-              Give a Rating <span className="text-red-500">*</span>
+            Үнэлгээ өгөх <span className="text-red-500">*</span>
             </h5>
             <div className="flex w-full ml-2 pt-1">
               {[1, 2, 3, 4, 5].map((i) =>
@@ -171,7 +171,7 @@ const UserOrderDetails = () => {
             <br />
             <div className="w-full ml-3">
               <label className="block text-[20px] font-[500]">
-                Write a comment
+              Сэтгэгдэл бичих
                 <span className="ml-1 font-[400] text-[16px] text-[#00000052]">
                   (optional)
                 </span>
@@ -183,7 +183,7 @@ const UserOrderDetails = () => {
                 rows="5"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder="How was your product? write your expresion about it!"
+                placeholder="Таны бүтээгдэхүүн ямар байсан бэ? энэ тухай өөрийн бодлоо бичээрэй!"
                 className="mt-2 w-[95%] border p-2 outline-none"
               ></textarea>
             </div>
@@ -191,7 +191,7 @@ const UserOrderDetails = () => {
               className={`${styles.button} text-white text-[20px] ml-3`}
               onClick={rating > 1 ? reviewHandler : null}
             >
-              Submit
+              Илгээх
             </div>
           </div>
         </div>
@@ -199,14 +199,14 @@ const UserOrderDetails = () => {
 
       <div className="border-t w-full text-right">
         <h5 className="pt-3 text-[18px]">
-          Total Price: <strong>US${data?.totalPrice}</strong>
+        Нийт үнэ: <strong>Төг{data?.totalPrice}</strong>
         </h5>
       </div>
       <br />
       <br />
       <div className="w-full 800px:flex items-center">
         <div className="w-full 800px:w-[60%]">
-          <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
+          <h4 className="pt-3 text-[20px] font-[600]">Хүргэлтийн хаяг:</h4>
           <h4 className="pt-3 text-[20px]">
             {data?.shippingAddress.address1 +
               " " +
@@ -217,24 +217,24 @@ const UserOrderDetails = () => {
           <h4 className=" text-[20px]">{data?.user?.phoneNumber}</h4>
         </div>
         <div className="w-full 800px:w-[40%]">
-          <h4 className="pt-3 text-[20px]">Payment Info:</h4>
+          <h4 className="pt-3 text-[20px]">Төлбөрийн мэдээлэл:</h4>
           <h4>
             Status:{" "}
-            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
+            {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Төлөгдөөгүй"}
           </h4>
           <br />
            {
-            data?.status === "Delivered" && (
+            data?.status === "Хүргэсэн" && (
               <div className={`${styles.button} text-white`}
               onClick={refundHandler}
-              >Give a Refund</div>
+              >Буцаан олголт өгөх</div>
             )
            }
         </div>
       </div>
       <br />
       <Link to="/">
-        <div className={`${styles.button} text-white`}>Send Message</div>
+        <div className={`${styles.button} text-white`}>Зурвас илгээх</div>
       </Link>
       <br />
       <br />

@@ -27,7 +27,7 @@ const AdminDashboardMain = () => {
    const adminBalance = adminEarning?.toFixed(2);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Захиалгын ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
@@ -35,7 +35,7 @@ const AdminDashboardMain = () => {
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
+        return params.getValue(params.id, "status") === "Хүргэсэн"
           ? "greenColor"
           : "redColor";
       },

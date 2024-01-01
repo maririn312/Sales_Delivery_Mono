@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please enter your product name!"],
+    required: [true, "Бүтээгдэхүүнийхээ нэрийг оруулна уу!"],
   },
   description: {
     type: String,
-    required: [true, "Please enter your product description!"],
+    required: [true, "Бүтээгдэхүүнийхээ тайлбарыг оруулна уу!"],
   },
   category: {
     type: String,
-    required: [true, "Please enter your product category!"],
+    required: [true, "Бүтээгдэхүүний ангилалаа оруулна уу!"],
   },
   tags: {
     type: String,
@@ -21,11 +21,11 @@ const productSchema = new mongoose.Schema({
   },
   discountPrice: {
     type: Number,
-    required: [true, "Please enter your product price!"],
+    required: [true, "Бүтээгдэхүүнийхээ үнийг оруулна уу!"],
   },
   stock: {
     type: Number,
-    required: [true, "Please enter your product stock!"],
+    required: [true, "Бүтээгдэхүүний нөөцөө оруулна уу!"],
   },
   images: [
     {

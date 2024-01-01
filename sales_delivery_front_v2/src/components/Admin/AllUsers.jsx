@@ -32,24 +32,24 @@ const AllUsers = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "User ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Хэрэглэгчийн ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "name",
-      headerName: "name",
+      headerName: "Нэр",
       minWidth: 130,
       flex: 0.7,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "Имайл",
       type: "text",
       minWidth: 130,
       flex: 0.7,
     },
     {
       field: "role",
-      headerName: "User Role",
+      headerName: "Хэрэглэгчийн үүрэг",
       type: "text",
       minWidth: 130,
       flex: 0.7,
@@ -57,7 +57,7 @@ const AllUsers = () => {
 
     {
       field: "joinedAt",
-      headerName: "joinedAt",
+      headerName: "Нэгдсэн",
       type: "text",
       minWidth: 130,
       flex: 0.8,
@@ -67,7 +67,7 @@ const AllUsers = () => {
       field: " ",
       flex: 1,
       minWidth: 150,
-      headerName: "Delete User",
+      headerName: "Хэрэглэгчийг устгах",
       type: "number",
       sortable: false,
       renderCell: (params) => {

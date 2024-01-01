@@ -34,7 +34,7 @@ class _WebViewStackState extends State<WebViewStack> {
         },
       ))
       ..loadRequest(
-        Uri.parse('http://localhost:3000'),
+        Uri.parse('http://192.168.1.2:3000'),
       );
   }
 

@@ -17,11 +17,11 @@ const AdminDashboardOrders = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Захиалгын ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
-      headerName: "Status",
+      headerName: "Статус",
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
@@ -32,7 +32,7 @@ const AdminDashboardOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Барааны тоо",
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -40,14 +40,14 @@ const AdminDashboardOrders = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: "Нийт",
       type: "number",
       minWidth: 130,
       flex: 0.8,
     },
     {
         field: "createdAt",
-        headerName: "Order Date",
+        headerName: "Захиалгын огноо",
         type: "number",
         minWidth: 130,
         flex: 0.8,
@@ -60,7 +60,7 @@ const AdminDashboardOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item?.cart?.reduce((acc, item) => acc + item.qty, 0),
-        total: item?.totalPrice + " $",
+        total: item?.totalPrice + " төг",
         status: item?.status,
         createdAt: item?.createdAt.slice(0,10),
       });

@@ -107,7 +107,7 @@ const ProfileContent = ({ active }) => {
             <form onSubmit={handleSubmit} aria-required={true}>
               <div className="w-full 800px:flex block pb-3">
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Full Name</label>
+                  <label className="block pb-2">Бүтэн нэр</label>
                   <input
                     type="text"
                     className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -117,7 +117,7 @@ const ProfileContent = ({ active }) => {
                   />
                 </div>
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Email Address</label>
+                  <label className="block pb-2">Имэйл хаяг</label>
                   <input
                     type="text"
                     className={`${styles.input} !w-[95%] mb-1 800px:mb-0`}
@@ -130,7 +130,7 @@ const ProfileContent = ({ active }) => {
 
               <div className="w-full 800px:flex block pb-3">
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Phone Number</label>
+                  <label className="block pb-2">Утасны дугаар</label>
                   <input
                     type="number"
                     className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -141,7 +141,7 @@ const ProfileContent = ({ active }) => {
                 </div>
 
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Enter your password</label>
+                  <label className="block pb-2">Нууц үгээ оруулна уу</label>
                   <input
                     type="password"
                     className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -210,7 +210,7 @@ const AllOrders = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Захиалгын ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
@@ -225,7 +225,7 @@ const AllOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Барааны тоо",
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -233,7 +233,7 @@ const AllOrders = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: "Нийт",
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -267,7 +267,7 @@ const AllOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "Төг " + item.totalPrice,
         status: item.status,
       });
     });
@@ -298,11 +298,11 @@ const AllRefundOrders = () => {
     orders && orders.filter((item) => item.status === "Processing refund");
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Захиалгын ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
-      headerName: "Status",
+      headerName: "Статус",
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
@@ -313,7 +313,7 @@ const AllRefundOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Барааны тоо",
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -321,7 +321,7 @@ const AllRefundOrders = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: "Нийт",
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -355,7 +355,7 @@ const AllRefundOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "Төг " + item.totalPrice,
         status: item.status,
       });
     });
@@ -383,7 +383,7 @@ const TrackOrder = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Захиалгын ID", minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
@@ -391,14 +391,14 @@ const TrackOrder = () => {
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
+        return params.getValue(params.id, "status") === "Хүргэсэн"
           ? "greenColor"
           : "redColor";
       },
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Барааны тоо",
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -406,7 +406,7 @@ const TrackOrder = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: "Нийт",
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -440,7 +440,7 @@ const TrackOrder = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "Төг " + item.totalPrice,
         status: item.status,
       });
     });
@@ -485,7 +485,7 @@ const ChangePassword = () => {
   return (
     <div className="w-full px-5">
       <h1 className="block text-[25px] text-center font-[600] text-[#000000ba] pb-2">
-        Change Password
+      Нууц үг солих
       </h1>
       <div className="w-full">
         <form
@@ -494,7 +494,7 @@ const ChangePassword = () => {
           className="flex flex-col items-center"
         >
           <div className=" w-[100%] 800px:w-[50%] mt-5">
-            <label className="block pb-2">Enter your old password</label>
+            <label className="block pb-2">Хуучин нууц үгээ оруулна уу</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -504,7 +504,7 @@ const ChangePassword = () => {
             />
           </div>
           <div className=" w-[100%] 800px:w-[50%] mt-2">
-            <label className="block pb-2">Enter your new password</label>
+            <label className="block pb-2">Шинэ нууц үгээ оруулна уу</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -514,7 +514,7 @@ const ChangePassword = () => {
             />
           </div>
           <div className=" w-[100%] 800px:w-[50%] mt-2">
-            <label className="block pb-2">Enter your confirm password</label>
+            <label className="block pb-2">Баталгаажуулах нууц үгээ оруулна уу</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -602,7 +602,7 @@ const Address = () => {
               />
             </div>
             <h1 className="text-center text-[25px] font-Poppins">
-              Add New Address
+            Шинэ хаяг нэмэх
             </h1>
             <div className="w-full">
               <form aria-required onSubmit={handleSubmit} className="w-full">
@@ -617,7 +617,7 @@ const Address = () => {
                       className="w-[95%] border h-[40px] rounded-[5px]"
                     >
                       <option value="" className="block border pb-2">
-                        choose your country
+                      улсаа сонго
                       </option>
                       {Country &&
                         Country.getAllCountries().map((item) => (
@@ -633,7 +633,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Choose your City</label>
+                    <label className="block pb-2">Хотоо сонго</label>
                     <select
                       name=""
                       id=""
@@ -642,7 +642,7 @@ const Address = () => {
                       className="w-[95%] border h-[40px] rounded-[5px]"
                     >
                       <option value="" className="block border pb-2">
-                        choose your city
+                      Хотоо сонго
                       </option>
                       {State &&
                         State.getStatesOfCountry(country).map((item) => (
@@ -658,7 +658,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Address 1</label>
+                    <label className="block pb-2">хаяг1</label>
                     <input
                       type="address"
                       className={`${styles.input}`}
@@ -668,7 +668,7 @@ const Address = () => {
                     />
                   </div>
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Address 2</label>
+                    <label className="block pb-2">хаяг2</label>
                     <input
                       type="address"
                       className={`${styles.input}`}
@@ -679,7 +679,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Zip Code</label>
+                    <label className="block pb-2">зип код</label>
                     <input
                       type="number"
                       className={`${styles.input}`}
@@ -690,7 +690,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Address Type</label>
+                    <label className="block pb-2">Хаягийн төрөл</label>
                     <select
                       name=""
                       id=""
@@ -699,7 +699,7 @@ const Address = () => {
                       className="w-[95%] border h-[40px] rounded-[5px]"
                     >
                       <option value="" className="block border pb-2">
-                        Choose your Address Type
+                      Хаягийн төрлөө сонгоно уу
                       </option>
                       {addressTypeData &&
                         addressTypeData.map((item) => (
@@ -730,13 +730,13 @@ const Address = () => {
       )}
       <div className="flex w-full items-center justify-between">
         <h1 className="text-[25px] font-[600] text-[#000000ba] pb-2">
-          My Addresses
+        Миний хаягууд
         </h1>
         <div
           className={`${styles.button} !rounded-md`}
           onClick={() => setOpen(true)}
         >
-          <span className="text-[#fff]">Add New</span>
+          <span className="text-[#fff]">Шинээр нэмэх</span>
         </div>
       </div>
       <br />
@@ -771,7 +771,7 @@ const Address = () => {
 
       {user && user.addresses.length === 0 && (
         <h5 className="text-center pt-8 text-[18px]">
-          You not have any saved address!
+          Танд хадгалсан хаяг алга!
         </h5>
       )}
     </div>
