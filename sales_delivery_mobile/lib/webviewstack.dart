@@ -34,7 +34,7 @@ class _WebViewStackState extends State<WebViewStack> {
         },
       ))
       ..loadRequest(
-        Uri.parse('http://192.168.1.2:3000'),
+        Uri.parse('https://sales-delivery-mono-9264.vercel.app'),
       );
   }
 
