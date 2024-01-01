@@ -1,1 +1,1 @@
-export const server = "https://sales-delivery-mono-1zekl032o-maririn312.vercel.app/api/v2";
+export const server = "https://sales-delivery-mono.vercel.app/api/v2";
