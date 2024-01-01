@@ -1,1 +1,1 @@
-export const server = "http://192.168.1.2:8000/api/v2";
+export const server = "https://sales-delivery-mono-1zekl032o-maririn312.vercel.app/api/v2";
