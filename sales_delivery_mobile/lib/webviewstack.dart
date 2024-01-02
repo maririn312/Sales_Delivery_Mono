@@ -16,11 +16,14 @@ class _WebViewStackState extends State<WebViewStack> {
   void initState() {
     super.initState();
     controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(NavigationDelegate(
         onPageStarted: (url) {
-          setState(() {
-            loadingPercentage = 0;
-          });
+          if (mounted) {
+            setState(() {
+              loadingPercentage = 0;
+            });
+          }
         },
         onProgress: (progress) {
           setState(() {
